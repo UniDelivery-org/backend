@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="006" author="achraf">
+        <createTable tableName="deliveries">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="sender_id" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_delivery_sender" references="users(id)"/>
+            </column>
+            <column name="courier_id" type="UUID">
+                <constraints nullable="true" foreignKeyName="fk_delivery_courier" references="users(id)"/>
+            </column>
+            <column name="pickup_address" type="VARCHAR(255)"/>
+            <column name="pickup_lat" type="DOUBLE"/>
+            <column name="pickup_lon" type="DOUBLE"/>
+            <column name="dropoff_address" type="VARCHAR(255)"/>
+            <column name="dropoff_lat" type="DOUBLE"/>
+            <column name="dropoff_lon" type="DOUBLE"/>
+            <column name="status" type="VARCHAR(50)"/>
+            <column name="vehicle_type_required" type="VARCHAR(50)"/>
+            <column name="weight_kg" type="DOUBLE"/>
+            <column name="distance_km" type="DOUBLE"/>
+            <column name="note" type="VARCHAR(500)"/>
+            <column name="receiver_name" type="VARCHAR(100)"/>
+            <column name="receiver_phone" type="VARCHAR(50)"/>
+            <column name="agreed_price" type="DECIMAL(19, 2)"/>
+            <column name="payment_method" type="VARCHAR(50)"/>
+            <column name="payer_type" type="VARCHAR(50)"/>
+            <column name="completed_at" type="TIMESTAMP"/>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

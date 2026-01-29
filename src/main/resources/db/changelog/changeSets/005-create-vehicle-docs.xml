@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="005" author="achraf">
+        <createTable tableName="vehicle_documents">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="vehicle_id" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_docs_vehicle" references="vehicles(id)"/>
+            </column>
+            <column name="type" type="VARCHAR(50)"/> <!-- CARTE_GRISE, ASSURANCE -->
+            <column name="file_url" type="VARCHAR(500)"/>
+            <column name="verification_status" type="VARCHAR(50)"/>
+            <column name="expiry_date" type="TIMESTAMP"/>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

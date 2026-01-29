@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <include file="changeSets/001-create-users.xml" relativeToChangelogFile="true"/>
+    <include file="changeSets/002-create-walets.xml" relativeToChangelogFile="true"/>
+    <include file="changeSets/003-create-id-docs.xml" relativeToChangelogFile="true"/>
+    <include file="changeSets/004-create-vehicles.xml" relativeToChangelogFile="true"/>
+    <include file="changeSets/005-create-vehicle-docs.xml" relativeToChangelogFile="true"/>
+    <include file="changeSets/006-create-deliveries.xml" relativeToChangelogFile="true"/>
+    <include file="changeSets/007-create-tracking-logs.xml" relativeToChangelogFile="true"/>
+    <include file="changeSets/008-create-transactions.xml" relativeToChangelogFile="true"/>
+    <include file="changeSets/009-create-reviews.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
