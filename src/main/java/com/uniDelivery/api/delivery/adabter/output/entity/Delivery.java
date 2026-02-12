@@ -17,7 +17,6 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Delivery extends BaseEntity {
     @Column(nullable = false)
     private UUID senderId;

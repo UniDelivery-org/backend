@@ -14,7 +14,6 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class VehicleDocument extends BaseEntity {
     @Column(nullable = false)
     private UUID vehicleId;

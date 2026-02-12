@@ -14,7 +14,6 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class IdentityDocument extends BaseEntity {
     @Column(name= "user_id", nullable = false)
     private UUID ownerId;

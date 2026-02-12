@@ -12,7 +12,6 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Review extends BaseEntity {
     @Column(nullable = false)
     private UUID deliveryId;

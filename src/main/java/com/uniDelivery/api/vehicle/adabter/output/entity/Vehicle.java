@@ -13,7 +13,6 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Vehicle extends BaseEntity {
     @Column(name= "user_id", nullable = false)
     private UUID ownerId; // user who has this vehicle
