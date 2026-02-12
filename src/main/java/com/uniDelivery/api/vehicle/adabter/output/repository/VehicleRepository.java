@@ -10,6 +10,6 @@ import java.util.UUID;
 
 @Repository
 public interface VehicleRepository extends JpaRepository<Vehicle, UUID> {
-    List<Vehicle> findByUserId(UUID userId);
-    Optional<Vehicle> findByUserIdAndIsActiveTrue(UUID userId);
+    List<Vehicle> findByOwnerId(UUID userId);
+    Optional<Vehicle> findByOwnerIdAndIsActiveTrue(UUID userId);
 }

@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface IdentityDocumentRepository extends JpaRepository<IdentityDocument, UUID> {
-    List<IdentityDocument> findByUserId(UUID userId);
+    List<IdentityDocument> findByOwnerId(UUID userId);
 }

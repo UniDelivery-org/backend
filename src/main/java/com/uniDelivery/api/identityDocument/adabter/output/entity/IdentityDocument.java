@@ -3,10 +3,10 @@ package com.uniDelivery.api.identityDocument.adabter.output.entity;
 import com.uniDelivery.api.shared.entities.BaseEntity;
 import com.uniDelivery.api.identityDocument.adabter.output.enums.IdentityDocType;
 import com.uniDelivery.api.shared.enums.VerificationStatus;
-import com.uniDelivery.api.user.adabter.output.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @Table(name = "identity_documents")
@@ -16,10 +16,8 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 public class IdentityDocument extends BaseEntity {
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @Column(name= "user_id", nullable = false)
+    private UUID ownerId;
 
     @Enumerated(EnumType.STRING)
     private IdentityDocType type;

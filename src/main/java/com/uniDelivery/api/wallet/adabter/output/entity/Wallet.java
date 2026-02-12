@@ -1,12 +1,10 @@
 package com.uniDelivery.api.wallet.adabter.output.entity;
 
 import com.uniDelivery.api.shared.entities.BaseEntity;
-import com.uniDelivery.api.transaction.adabter.output.entity.Transaction;
-import com.uniDelivery.api.user.adabter.output.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "wallets")
@@ -16,10 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Wallet extends BaseEntity {
-
-    @OneToOne
-    @JoinColumn(name = "user_id", nullable = false, unique = true)
-    private User user;
+    @Column(name= "user_id", nullable = false)
+    private UUID ownerId;
 
     @Column(nullable = false)
     private BigDecimal balance = BigDecimal.ZERO;
@@ -27,10 +23,6 @@ public class Wallet extends BaseEntity {
     @Column(nullable = false)
     private BigDecimal frozenAmount = BigDecimal.ZERO;
 
-    // The amount the courier owes the platform (Commission from COD)
     @Column(nullable = false)
     private BigDecimal commissionDebt = BigDecimal.ZERO;
-
-    @OneToMany(mappedBy = "wallet", cascade = CascadeType.ALL)
-    private List<Transaction> transactions;
 }

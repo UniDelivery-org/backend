@@ -1,11 +1,11 @@
 package com.uniDelivery.api.transaction.adabter.output.entity;
 
 import com.uniDelivery.api.shared.entities.BaseEntity;
-import com.uniDelivery.api.wallet.adabter.output.entity.Wallet;
 import com.uniDelivery.api.transaction.adabter.output.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Entity
 @Table(name = "transactions")
@@ -15,10 +15,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class Transaction extends BaseEntity {
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "wallet_id", nullable = false)
-    private Wallet wallet;
+    @Column(nullable = false)
+    private UUID walletId;
 
     @Column(nullable = false)
     private BigDecimal amount;

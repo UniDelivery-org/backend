@@ -18,6 +18,6 @@ public interface DeliveryRepository extends JpaRepository<Delivery, UUID> {
 
     List<Delivery> findByCourierIdOrderByCreatedAtDesc(UUID courierId);
 
-    @Query("SELECT d FROM Delivery d WHERE d.courier.id = :courierId AND d.status IN ('ACCEPTED', 'PICKED_UP', 'IN_TRANSIT')")
+    @Query("SELECT d FROM Delivery d WHERE d.courierId = :courierId AND d.status IN ('ACCEPTED', 'PICKED_UP', 'IN_TRANSIT')")
     List<Delivery> findActiveDeliveriesByCourier(UUID courierId);
 }

@@ -4,14 +4,12 @@ import com.uniDelivery.api.delivery.adabter.output.enums.DeliveryStatus;
 import com.uniDelivery.api.delivery.adabter.output.enums.PayerType;
 import com.uniDelivery.api.delivery.adabter.output.enums.PaymentMethod;
 import com.uniDelivery.api.shared.entities.BaseEntity;
-import com.uniDelivery.api.trakingLog.adabter.output.entity.TrackingLog;
-import com.uniDelivery.api.user.adabter.output.entity.User;
 import com.uniDelivery.api.vehicle.adabter.output.enums.VehicleType;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.Instant;
-import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "deliveries")
@@ -21,14 +19,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Delivery extends BaseEntity {
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sender_id", nullable = false)
-    private User sender;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "courier_id")
-    private User courier;
+    @Column(nullable = false)
+    private UUID senderId;
+    private UUID courierId;
 
     private String pickupAddress;
     private Double pickupLat;
@@ -60,7 +53,4 @@ public class Delivery extends BaseEntity {
     private PayerType payerType;
 
     private Instant completedAt;
-
-    @OneToMany(mappedBy = "delivery", cascade = CascadeType.ALL)
-    private List<TrackingLog> trackingLogs;
 }

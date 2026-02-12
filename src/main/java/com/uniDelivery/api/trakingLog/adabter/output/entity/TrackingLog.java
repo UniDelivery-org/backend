@@ -1,6 +1,5 @@
 package com.uniDelivery.api.trakingLog.adabter.output.entity;
 
-import com.uniDelivery.api.delivery.adabter.output.entity.Delivery;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.Instant;
@@ -19,9 +18,8 @@ public class TrackingLog {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "delivery_id", nullable = false)
-    private Delivery delivery;
+    @Column(nullable = false)
+    private UUID deliveryId;
 
     private Double lat;
     private Double lon;

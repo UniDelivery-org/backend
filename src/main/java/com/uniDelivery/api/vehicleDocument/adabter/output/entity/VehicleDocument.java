@@ -3,10 +3,10 @@ package com.uniDelivery.api.vehicleDocument.adabter.output.entity;
 import com.uniDelivery.api.shared.entities.BaseEntity;
 import com.uniDelivery.api.vehicleDocument.adabter.output.enums.VehicleDocType;
 import com.uniDelivery.api.shared.enums.VerificationStatus;
-import com.uniDelivery.api.vehicle.adabter.output.entity.Vehicle;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @Table(name = "vehicle_documents")
@@ -16,10 +16,8 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 public class VehicleDocument extends BaseEntity {
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "vehicle_id", nullable = false)
-    private Vehicle vehicle;
+    @Column(nullable = false)
+    private UUID vehicleId;
 
     @Enumerated(EnumType.STRING)
     private VehicleDocType type;
