@@ -1,7 +1,7 @@
-package com.uniDelivery.api.user.adabter.output.entity;
+package com.uniDelivery.api.user.adabter.output.persistence.entity;
 
 import com.uniDelivery.api.shared.entities.BaseEntity;
-import com.uniDelivery.api.user.adabter.output.enums.UserRole;
+import com.uniDelivery.api.shared.enums.UserRole;
 import com.uniDelivery.api.shared.enums.VerificationStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,7 +12,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User extends BaseEntity {
+public class UserEntity extends BaseEntity {
 
     @Column(nullable = false)
     private String fullName;
