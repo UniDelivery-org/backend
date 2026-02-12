@@ -10,7 +10,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="delivery_id" type="UUID">
-                <constraints nullable="false" foreignKeyName="fk_tracking_delivery" references="deliveries(id)"/>
+                <constraints nullable="false"/>
             </column>
             <column name="lat" type="DOUBLE"/>
             <column name="lon" type="DOUBLE"/>

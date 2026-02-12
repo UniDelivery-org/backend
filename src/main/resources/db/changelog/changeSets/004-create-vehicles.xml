@@ -10,7 +10,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="user_id" type="UUID">
-                <constraints nullable="false" foreignKeyName="fk_vehicle_user" references="users(id)"/>
+                <constraints nullable="false"/>
             </column>
             <column name="type" type="VARCHAR(50)"/>
             <column name="model" type="VARCHAR(100)"/>

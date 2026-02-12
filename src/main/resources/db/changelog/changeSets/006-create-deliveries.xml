@@ -10,10 +10,10 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="sender_id" type="UUID">
-                <constraints nullable="false" foreignKeyName="fk_delivery_sender" references="users(id)"/>
+                <constraints nullable="false"/>
             </column>
             <column name="courier_id" type="UUID">
-                <constraints nullable="true" foreignKeyName="fk_delivery_courier" references="users(id)"/>
+                <constraints nullable="true"/>
             </column>
             <column name="pickup_address" type="VARCHAR(255)"/>
             <column name="pickup_lat" type="DOUBLE"/>

@@ -10,7 +10,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="vehicle_id" type="UUID">
-                <constraints nullable="false" foreignKeyName="fk_docs_vehicle" references="vehicles(id)"/>
+                <constraints nullable="false"/>
             </column>
             <column name="type" type="VARCHAR(50)"/> <!-- CARTE_GRISE, ASSURANCE -->
             <column name="file_url" type="VARCHAR(500)"/>

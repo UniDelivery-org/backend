@@ -10,7 +10,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="user_id" type="UUID">
-                <constraints nullable="false" unique="true" foreignKeyName="fk_wallet_user" references="users(id)"/>
+                <constraints nullable="false" unique="true"/>
             </column>
             <column name="balance" type="DECIMAL(19, 2)" defaultValueNumeric="0.00"/>
             <column name="frozen_amount" type="DECIMAL(19, 2)" defaultValueNumeric="0.00"/>

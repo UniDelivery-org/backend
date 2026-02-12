@@ -10,10 +10,10 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="delivery_id" type="UUID">
-                <constraints nullable="false" foreignKeyName="fk_review_delivery" references="deliveries(id)"/>
+                <constraints nullable="false"/>
             </column>
             <column name="courier_id" type="UUID">
-                <constraints nullable="false" foreignKeyName="fk_review_courier" references="users(id)"/>
+                <constraints nullable="false"/>
             </column>
             <column name="rating" type="INT"/>
             <column name="comment" type="VARCHAR(500)"/>
